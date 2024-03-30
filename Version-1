@@ -1,0 +1,34 @@
+# This is a simple Calculator!
+
+print("HELLO, WORLD!")
+
+# Asking for user input
+first_value = input("Enter the first value: ")
+second_value = input("Enter the second value: ")
+operation = input("Enter the operation (+, -, *, /): ")
+
+# Converting inputs to float to handle decimal numbers
+first_value = float(first_value)
+second_value = float(second_value)
+
+# Performing the operation based on user input
+if operation == '+':
+    result = first_value + second_value
+elif operation == '-':
+    result = first_value - second_value
+elif operation == '*':
+    result = first_value * second_value
+elif operation == '/':
+    # Check for division by zero
+    if second_value == 0:
+        print("Error: Cannot divide by zero!")
+        result = None
+    else:
+        result = first_value / second_value
+else:
+    print("Error: Invalid operation entered!")
+    result = None
+
+# Printing the result
+if result is not None:
+    print("Result:", result)
